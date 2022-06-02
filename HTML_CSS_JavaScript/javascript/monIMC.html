@@ -1,0 +1,30 @@
+<!--DOCUMENT html-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>mon IMC</title>
+	</head>
+  
+  <body>
+    <h1>
+      Mon IMC
+    </h1>
+    <p>
+        Ce programme va calculer ton IMC.<br \>
+        <form name="formulaire">
+		Quel est ton nom ? : <input type="text" name="nom" id="nom" value="Nom"> <br />
+		Quel est ton prénom ? : <input type="text" name="prenom" id="prenom" value="Prénom"> <br />
+		Quelle est ta taille ? <input type="text" name="taille" id="taille" value="Taille en m"> <br />
+        Quelle est ton poids ? <input type="text" name="poids" id="poids" value="Poids en kg"> <br />
+		Calcul de ton IMC : <input type="button" name="bouton" value="Cliquez ici" onClick="imc()"> <br />
+	</form>
+    
+    <p id="a_remplir"></p>
+
+    
+	<!-- un lien vers le programme écrit en JavaScript -->
+	<script type="text/javascript" src="imc.js"></script>
+	
+	</body>
+</html>
+

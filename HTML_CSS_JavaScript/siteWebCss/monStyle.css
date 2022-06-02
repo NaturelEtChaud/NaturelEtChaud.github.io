@@ -1,0 +1,34 @@
+body
+{
+    background-color : rgb(254,221,178);
+    color : rgb(92,76,57);
+    text-align : center;
+    font-family : serif;
+    font-size : 18px;
+}
+
+img
+{
+    height : 200px;
+}
+
+h1
+{
+	font-size : 60px;
+    font-family : cursive;
+	margin-top: 4px;
+    margin-left: 25px;
+    margin-right : 25px;
+    border-radius: 20px;
+    border: solid rgb(92,76,57) 3px;
+	background-color : white;
+}
+
+
+ul, ol
+{
+    text-align : left;
+    
+}
+	
+	

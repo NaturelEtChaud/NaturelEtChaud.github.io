@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>  
+	<head>
+		<!-- En-tête de la page -->
+		<meta charset="utf-8" />
+		<title>Un formulaire</title>
+	</head>
+
+	<body>
+	<h1>Voici quelques exemples de formulaires</h1>
+	
+	<p>
+	<h3>Les champs de saisi classiques :</h3>
+	<form name="formulaire1">
+		Votre nom : <input type="text" name="nom"> <br />
+		Votre prénom : <input type="text" name="prenom" value="on peut pré-remplir"> <br />
+		Votre mot de passe : <input type="password" name="pass"> <br />
+		Un bouton pour valider : <input type="button" name="bouton" value="Cliquez ici" onClick="controle()"> <br />
+	</form>
+	</p>
+	
+	<p>
+	<h3>Un champ de saisi spécifique pour une adresse email :</h3>
+	<form name="formulaire2">
+		Votre adresse email : <input type="email" value="il faut un @"/><br />
+	</form>
+	</p>
+	
+	<p>
+	<h3>Un champ de saisi spécifique pour une adresse internet :</h3>
+	<form name="formulaire3">
+		Une adresse internet : <input type="url" value="il faut une adresse valide" /> <br />
+	</form>
+	</p>
+	
+	<p>
+	<h3>Un champ de saisi pour un nombre entier :</h3>
+	<form name="formulaire4">
+		Un nombre impair entre 1 et 15 : <input type="number" min="1" max="15" step="2"/> <br />
+	</form>
+	</p>
+	
+	<p>
+	<h3>Un champ de saisi pour un nombre entier sous la forme d'un curseur :</h3>
+	<form name="formulaire5">
+		Un nombre pair entre 0 et 10 : <input type="range" min="0" max="10" step="2"/> <br />
+	</form>
+	</p>
+	
+	<p>
+	<h3>Une zone de texte :</h3>
+	<form name="formulaire6">
+		<textarea name="dutexte" rows="5" cols="50">
+Vous pouvez rajouter ici ce que vous voulez.
+		</textarea> <br />
+	</form>
+	</p>
+	
+	<p>
+	<h3>Un champ pour sélectionner une couleur :</h3>
+	<form name="formulaire7">
+		<input type="color" value="#FF0000" /> <br />
+	</form>
+	</p>
+	
+	<p>
+	<h3>Les champs de saisi temporelles :</h3>
+	<form name="formulaire8">
+		Une date au format jj/mm/aaaa : <input type="date" /> <br />
+		Une heure au format h:mm :  <input type="time" /> <br />
+	</form>
+	</p>
+	
+	<p>
+	<h3>Des cases à cocher :</h3>
+	<form name="formulaire9">
+		<p>
+       Quelle est la bonne option ? (plusieurs réponses possibles) : <br />
+       <input type="checkbox" name="faire" checked /> Faire <br />
+       <input type="checkbox" name="defaire" checked /> Défaire <br />
+       <input type="checkbox" name="refaire" /> Refaire <br />
+	</p>
+	</form>
+	</p>
+	
+	<p>
+	<h3>Une zone d'option :</h3>
+	<form name="formulaire10">
+		<p>
+       Quelle est la bonne option ? (une seule réponse possible) : <br />
+	   <!-- Les options d'un groupe portent toutes le même nom, mais chaque option a une valeur différente -->
+       <input type="radio" name="option" value="faire"  /> Faire <br />
+       <input type="radio" name="option" value="defaire" checked /> Défaire <br />
+       <input type="radio" name="option" value="refaire" /> Refaire <br />
+	</p>
+	</form>
+	</p>
+	
+	<p>
+	<h3>Une liste déroulante :</h3>
+	<form name="formulaire11">
+		<p>
+		Quelle est la bonne option ? (une seule réponse possible) : <br />
+		<!-- Les options d'un groupe portent toutes le même nom, mais chaque option a une valeur différente -->
+		<select nom="option">
+			<option value="faire" > Faire  </option>
+			<option value="défaire" > Défaire  </option>
+			<option value="refaire" > Refaire  </option>
+		</select >
+	</p>
+	</form>
+	</p>
+
+	</body>
+</html>

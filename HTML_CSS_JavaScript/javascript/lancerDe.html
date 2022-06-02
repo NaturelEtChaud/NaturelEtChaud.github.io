@@ -1,0 +1,28 @@
+<!--DOCUMENT html-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Le dé</title>
+	</head>
+  
+  <body>
+    <p>
+        Nous allons lancer un dé.<br \>
+        <form name="formulaire">
+		Combien a-t-il de faces ? :
+        <input id="nb_faces" type="number" min="4" max="30"/> <br />
+		Combien a-t-il de lancers ? :
+        <input id="nb_lancers" type="number" min="1" max="10"/> <br />
+	    </form>
+    </p> 
+    <button onclick="alea()">Lancer le dé</button>
+
+    <p id="a_remplir"></p>
+
+    <p>Merci !</p>
+	
+	<!-- un lien vers le programme écrit en JavaScript -->
+	<script type="text/javascript" src="aleatoire.js"></script>
+	
+	</body>
+</html>
