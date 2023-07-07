@@ -43,6 +43,50 @@
     Attention, -1 est une valeur interdite !!!
         </pre>
         </p>
-        <strong><emp>Work in Progress !!!!</emp></strong>
+    
+    
+        <p>
+        Le problème apparaît si on appelle cette fonction dans une autre. En effet, pour la valeur -1, la fonction ne renvoie rien, elle affiche juste un  message.<br/>
+        Par exemple, si on porgramme une fonction qui calcule un taux d'accroissement :
+        <pre>
+    def tauxAccroissement(f,a,b):
+        return (f(a) - f(b)) / (a - b) 
+        </pre>
+        Cette fonction <code>tauxAccroissement</code> dépend de ce que la fonction <code>f</code> va renvoyer. Donc si on demande le taux d'accroissement de la fonction f entre 1 et 3, pas de souci.
+        <pre>
+    >>> tauxAccroissement(f,1,3)
+    -0.125  
+        </pre>
+        Par contre si on demande le taux d'accroissement entre -1 et 3, le message d'erreur n'est pas si clair car la fonction <code>f</code> ne renvoie rien, elle affiche simplement un message. Donc la fonction  <code>tauxAccroissement</code> est incapable d'effectuer le calcul demandé. En outre le message d'erreur n'est pas clair pour tout le monde (pour la petite histoire comme <code>f</code> ne renvoie rien, le message d'erreur nous signale que Python est incapable d'effectuer une soustration entre un Rien et un flottant (nombre décimal)).
+        <pre><xmp>
+    >>> tauxAccroissement(f,-1,3)
+    Attention, -1 est une valeur interdite
+    Traceback (most recent call last):
+      File "<input>", line 1, in <module>
+      File "<input>", line 13, in tauxAccroissement
+    TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'
+        </xmp></pre>
+        </p>
+    
+    <h4>Une solution, les assertions</h4>
+    L'idée est alors de s'assurer que la fonction est bien utilisée dans les conditions de son utilisation avec le mot clef <code>assert</code>, suivi éventuellement d'une virgule et d'un message d'erreur entre guillemet.
+    Dans notre exemple, nous allons nous assurer que la fonction est utilisée pour des valeurs de <code>x</code> différentes de -1.
+    <pre>
+    def f_v2(x) :
+        assert x != -1, "Attention, -1 est une valeur interdite"
+        return 1 / (x + 1)
+    </pre>
+    Que se passe-t-il alors avec notre fonction <code>tauxAccroissement</code> ?
+    <pre><xmp>
+    >>> tauxAccroissement(f_v2,-1,3)
+    Traceback (most recent call last):
+      File "<input>", line 1, in <module>
+      File "<input>", line 13, in tauxAccroissement
+      File "<input>", line 8, in f_v2
+    AssertionError: Attention, -1 est une valeur interdite
+    </xmp></pre>
+    La fonction <code>tauxAccroissement</code> est dans l'incapacité d'effectuer sa tache, car elle est bloquée au niveau de l'assertion de la fonction <code>f_v2</code> et surtout nous retrouvons notre message d'erreur end dernière ligne du message d'erreur, on comprend tout de suite le problème.<br/>
+    <br/>
+    On peut tester ce programme sur basthon en ligne sur le lien <a target="_blank" href="https://console.basthon.fr/?script=eJyNkE1qwzAQhfeB3OHVm1pUoaTdBWLISYosj4rAlox-jI-UnsMX6yiuIYUGOjuNZr735nVkYOpZ4LTfgcsazDifcTj-NEqNwbpUV5eUyCXrneRvUEzIjjCpnnIAT1DobKJKrIvUR8IdJFDKweGIV9QzXnDkuf2uK_of09udBRUjhcQ2nooNif_qrtuPZZLK80Xr4C0LDEysjVSyFadfi7WplcCBQ2mFKBDFj1agUKqKRUbPqoldUIAmzsZ_BjUMJKHGsFwjaF6-dF79dspFdstTNFgqe8MY126voL2LvicYZcMtq6Zp_rTJMbzzHRutozzb5TrQypObHUYy7yYNNZFG_7yGWRqP8Rz_psAXfgNXYp8Q">suivant</a>.
     </body>
 </html>
