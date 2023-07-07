@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Une introduction à Python pour les Math au lycée</title>
+        <meta name="description" content="An interactive introduction to Python for Maths.">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <table width = 100%>
+        <tbody>
+        <tr><td><a href="index.html">Accueil</a></td>
+            <td><a href="fonction.html">Première partie <br/>Fonction</a></td>
+            <td><a href="sialors.html">Deuxième Partie <br/>Structure conditionnelle</a></td>
+            <td><a href="pour.html">Troisième Partie <br/>Boucle POUR</a></td>
+            <td><a href="tantque.html">Quatrième Partie<br/>Boucle TANT QUE</a></td></tr>
+        <tr><td colspan = "2">Pour aller plus loin</td>
+            <td>Les assertions</td>
+            <td><a href="flottants.html">Les nombres flottants</a></td>
+            <td><a href="modularite.html">La modularité</a></td></tr>
+        </tbody>
+        </table>
+        <h1>Les assertions</h1>
+        <h4> (ou gestion des erreurs)</h4>
+        <p>
+        En Mathématiques, on a souvent des fonctions qui ont des valeurs interdites, comme par exemple la fonction <math><mtable> <mtr>f(x) = <mfrac><mi>1</mi> <mi>x+1</mi></mfrac> </mtr> </mtable> </math> qui a pour valeur interdite -1. Il n'est pas rare de trouver ce genre de code, écrit par des élèves consciencieux :
+        <pre>
+    def f(x) :
+        if x == -1:
+            print("Attention, -1 est une valeur interdite !!!")
+        else :
+            return 1 / (x + 1)
+        </pre>
+        Pour des utilisations simples, cela ne pose pas de problème.
+        <pre>
+    >>> f(3)
+    0.25
+    >>> f(0)
+    1.0
+    >>> f(-1)
+    Attention, -1 est une valeur interdite !!!
+        </pre>
+        </p>
+        <strong><emp>Work in Progress !!!!</emp></strong>
+    </body>
+</html>
