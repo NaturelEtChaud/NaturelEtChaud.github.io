@@ -23,7 +23,219 @@
         </tbody>
         </table>
         <h1>Boucle POUR</h1>
+        <p>
+        On utilise une boucle POUR (<code>for</code>) dans deux cas.
+        <ol>
+            
+        <!--
+            répétition une nombre connu de fois
+        -->    
+            
+        <li>On doit répéter un nombre connu de fois la même action. <br/>
+            Par exemple, si on veut appliquer 5 fois une augmentation de 2,6% à un article coutant initialement 100 €. La syntaxe est alors la suivante, on commence par le mot-clef <code>for</code> suivi d'un compteur que l'on nomme par habitude (mais ce n'est pas une obligation) <code>i</code> suivi de <code>in range()</code>. On précisera dans les parenthèses le nombre de répétition souhaitée. On termine cette ligne par les deux points <code>:</code> habituel, suivis de la touche <kbd>Entrée</kbd> qui nous permet de créer de créer le bloc indenté d'instructions à répéter. Dans notre exemple, nous écrivons donc :
+        <pre>
+    prix = 100
+    for i in range(5):
+        prix = prix * (1 + 2,6/100)
+        </pre>
+        En réalité, la variable <code>i</code> n'a pas de réelle utilité et on peut se permettre de la remplacer par un <code>_</code> (le tiret du 8 ou <emp>undescore</emp> en anglais) :
+        <pre>
+    prix = 100
+    for _ in range(5):
+        prix = prix * (1 + 2,6/100)
+        </pre>
+        </li>
+               
+            
+        <!--
+            range avec 1, 2 ou 3 arguments
+        -->    
+            
+        <li>On doit répéter la même action pour une variable sur une plage de valeurs déterminée. <br/>
+            Par exemple, si on veut calculer un tableau de valeur pour la fonction <math><mtable><mtr>f(<mi>x</mi>)=<mfrac><mi>1</mi> <mi>x+1</mi></mfrac> </mtr></mtable></math> pour des valeurs de <math><mtable><mi>x</mi></mtable></math> sur un intervalle [a, b]. La syntaxe est alors la même que précédemment avec la distinction que la fonction <code>range</code> pourra prendre un , deux ou trois arguments en fonction des besoins.
+            <br/> <br/>
+            <ul>
+        <!--
+            range avec 1 seul argument
+        -->
+            <li><code>range(stop)</code><br/>
+                Pour les valeurs entières dans un intervalle du type [0, b], on utilisera la syntaxe avec un seul argument <code>range(stop)</code>.<br/>
+                En effet, la répétition débutera bien avec la valeur 0 et stoppera juste avant la valeur <code>stop</code>. Autrement dit pour un intervalle [0,5], il faudra écrire <code>range(6)</code>. D'une manière égénrale, pour un intervalle du type [0, b], in faudra écrire <code>range(b+1)</code>.<br/>
+                La valeur <code>stop</code> est donc une valeur exclue !<br/>
+                
+                Pour récupérer les résultats, comme je vous ai fortement <strong>déconseillé</strong> d'utiliser la fonction <code>print</code>, le mieux est d'utiliser une liste qui n'est pas au programme de seconde. On l'utilisera simplement pour stocker une liste de couples (valeur, image) que l'on peut assimiler aux coordonnées de points sur la courbe représentative de la fonction. On ne fera ici ni d'étude ni de  traitement de ces listes, choses qui doit plutôt être vues en première.
+                <h4>Exemple </h4>
+                Pour obtenir la liste des images des valeurs entières entre 0 et 2 pour la fonction <math><mtable><mtr>f(<mi>x</mi>)=<mfrac><mi>1</mi> <mi>x+1</mi></mfrac> </mtr></mtable></math> :
+        <pre>
+    def f(x):
+        return 1 / (x + 1)
         
+    liste_points = []
+    for x in range(3):
+        point = (x, f(x))
+        liste_points.append(point)
+        </pre>
+            
+            En interrogeant la liste <code>liste_points</code> dans la console, on obtient bien la liste des couples (valeur, image) pour les valeurs entières 0, 1 et 2.
+        <pre>
+    >>> liste_points
+    [(0, 1.0), (1, 0.5), (2, 0.3333333333333333)]
+        </pre>
+            Dans cet exemple, que l'on pourra tester sur <a target="_blank" href="https://console.basthon.fr/?script=eJxLSU1TSNOo0LTi5VKAgqLUktKiPAVDBX0FjQoFbQVDTYQcL1dOZnFJanxBfmZeSbGCrUJ0LC9XWn6RQoVCZp5CUWJeeqqGMcwwsCKgGo0KHbAdUHOQTdBLLChIzUvRAPM0Ab6VJkQ">Basthon</a>, j'ai remplacé le nom traditionnel de la variable <code>i</code> par un <code>x</code> qui convient mieux aux notations mathématiques habituelles. 
+            <br/> <br/>
+            </li>    
+           
+
+        
+        <!--
+            range avec 2 arguments
+        -->
+                
+            
+            <li><code>range(start, stop)</code><br/>
+                Pour les valeurs entières dans un intervalle du type [a, b], a non nul, on utilisera la syntaxe avec un seul argument <code>range(start, stop)</code>.<br/>
+                En effet, la répétition débutera bien avec la valeur <code>start</code> et stoppera juste avant la valeur <code>stop</code>. 
+                Autrement dit pour un intervalle [-2,5], il faudra écrire <code>range(-2,6)</code>. D'une manière égénrale, pour un intervalle du type [a, b], in faudra écrire <code>range(a,b+1)</code>.<br/>
+                La valeur <code>stop</code> est donc toujours une valeur exclue alors que la valeur <code>start</code> est une valeur incluse! <br/>
+                
+                <h4>Exemple </h4>
+                Pour obtenir la liste des images des valeurs entières entre 3 et 6 pour la fonction <math><mtable><mtr>f(<mi>x</mi>)=<mfrac><mi>1</mi> <mi>x+1</mi></mfrac> </mtr></mtable></math> :
+        <pre>
+    def f(x):
+        return 1 / (x + 1)
+        
+    liste_points = []
+    for x in range(3,6):
+        point = (x, f(x))
+        liste_points.append(point))
+        </pre>
+            
+            En interrogeant la liste <code>liste_points</code> dans la console, on obtient bien la liste des images des entiers 3, 4 et 5.
+        <pre>
+    >>> liste_points
+    [(3, 0.25), (4, 0.2), (5, 0.16666666666666666)]
+        </pre>
+                
+            <br/> <br/>
+            </li>
+                
+                
+    <!--
+            range avec 3 arguments
+        -->
+                
+            
+            <li><code>range(start, stop, step)</code><br/>
+                Pour les valeurs entières dans un intervalle du type [a, b], a non nul, avec un pas différent de 1 on utilisera la syntaxe avec un seul argument <code>range(start, stop, step)</code>.<br/>
+                En effet, la répétition débutera bien avec la valeur <code>start</code> et stoppera juste avant la valeur <code>stop</code> et avancera avec un pas de <code>step</code>.
+                Autrement dit pour un intervalle [-2,12] avec un pas de 3, il faudra écrire <code>range(-2,13,3)</code> ce qui donnera la liste d'entiers 2, 5, 8, 11. D'une manière égénrale, pour un intervalle du type [a, b] avec un pas p, in faudra écrire <code>range(a, b+1, p)</code>.<br/>
+                La valeur <code>stop</code> est donc toujours une valeur exclue alors que la valeur <code>start</code> est toujours une valeur incluse! <br/>
+                
+                <h4>Exemple </h4>
+                Pour obtenir la liste des images des valeurs entières entre 0 et 20 avec un pas de 10 pour la fonction <math><mtable><mtr>f(<mi>x</mi>)=<mfrac><mi>1</mi> <mi>x+1</mi></mfrac> </mtr></mtable></math> :
+        <pre>
+    def f(x):
+        return 1 / (x + 1)
+        
+    liste_points = []
+    for x in range(0,21,10):
+        point = (x, f(x))
+        liste_points.append(point))
+        </pre>
+            
+            En interrogeant la liste <code>liste_points</code> dans la console, on obtient bien la liste des images des entiers 3, 4 et 5.
+        <pre>
+    >>> liste_points
+    [(0, 1.0), (10, 0.09090909090909091), (20, 0.047619047619047616)]
+        </pre>
+        Il est à noter dans dans la fonction <code>range</code> nous pouvions remplacer le nombre 21 par tout autre entier entre 21 et 29 (inclus).
+            </li>
+            </ul>
+        
+        </li>    
+            
+        </ol>
+        </p>
+    
+        <!--
+            Résumé
+        -->
+    
+        <h4>En résumé !!!!!</h4>
+        <ul>
+        <li><code>range(stop)</code> permet d’incrémenter de 1 en 1, en partant de 0 inclus jusqu’à <code>stop</code> exclu.<br/>
+            Autrement dit <code>range(10)</code> permet d’obtenir les incréments 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
+            </li>
+        <li><code>range(start, stop)</code> permet d’incrémenter de 1 en 1, en partant de <code>start</code> inclus jusqu’à <code>stop</code> exclu.<br/>
+            Autrement dit <code>range(2, 10)</code> permet d’obtenir les incréments 2, 3, 4, 5, 6, 7, 8, 9.
+            </li>
+        <li><code>range(start, stop, stap)</code> permet d’incrémenter de <code>step</code> en <code>step</code>, <code>start</code> inclus jusqu’à <code>stop</code> exclu.<br/>
+            Autrement dit <code>range(2, 10, 3)</code> permet d’obtenir les incréments 2, 5, 8.
+            </li>   
+        </ul>
+        
+    
+        <!--
+            Exercices
+        -->
+
+    
+        <h2>Des exercices</h2>
+        <h4>Exercice 1</h4>
+        <p>
+            Quelles sont les listes de nombres obtenues dans chacun des cas suivants :
+            <ol>
+            <li><code>range(5)</code></li>
+            <li><code>range(4, 10)</code></li>
+            <li><code>range(10, 4)</code></li>
+            <li><code>range(4, 10, 2)</code></li>
+            <li><code>range(10, 4, -1)</code></li>
+            </ol>
+            <details>
+            <summary> Aide </summary>      
+            <div>
+            Pour la question 3 il y a un piège. L'unique façon de décrémenter est la solution proposée à la question 5.
+            </div>
+            </details>     
+        </p>
+        
+
+        <h4>Exercice 2</h4>
+        <p>
+            Obtenir la liste des carrés parfaits de 0 à 256 à l'aide d'un programme écrit en Python.
+            <table width = 100%>
+            <tbody>
+            <tr><td><a target="_blank" href="https://console.basthon.fr/">Lien Basthon pour programmer</a></td>
+                <td><a style = "text-align :right" target="_blank" href="https://console.basthon.fr/?script=eJzLySwuSY1PTiwqSi1WsFWIjuXlSssvUshLUsjMUyhKzEtP1TA017Ti5VIAghwkxXqJBQWpeSkaQJVaWgpGmgBq2ha_">Lien pour la correction</a></td>
+                </tr>
+            </tbody>
+            </table>
+            <details>
+            <summary> Aide </summary>      
+            <div>
+            256 est le carré de 16.
+            </div>
+            </details>     
+        </p>
+
+        <h4>Exercice 3</h4>
+        <p>
+            Obtenir la liste des multiples de 13 entre 0 et 666 inclus.
+            <table width = 100%>
+            <tbody>
+            <tr><td><a target="_blank" href="https://console.basthon.fr/">Lien Basthon pour programmer</a></td>
+                <td><a style = "text-align :right" target="_blank" href="https://console.basthon.fr/?script=eJx1zlsKgkAUBuB3wT38IIGChCYYBK4kQrwc68A4I-MoLSnX4caapCiy_sdz_Tx0mlqeb5rQzpO5qJpCFCNVEAWkMqwkakLNI_dcsmAzT64juDeUt4Mw3AnqkeF4cp1GacgSLKELeSY_TffBwXVgw43tbOIEWYboWXvk69C26DqStS_L4D3jOp4lDFerbH8pGyWrxbl8XeHycffHF4WwxBBx8mKuVz9Ed73CYXw">Lien pour la correction</a></td>
+                </tr>
+            </tbody>
+            </table>
+            <details>
+            <summary> Aide </summary>      
+            <div>
+            Il existe deux façons différents de procéder. La première en raisonnant sur la notion de divisibilité, la deuxième en utilisant comme il se doit une fonction que l'on vient d'étudier ensemble ...
+            </div>
+            </details>     
+        </p>
+    
         <strong><emp>Work in Progress !!!!</emp></strong>
     </body>
 </html>
