@@ -46,18 +46,18 @@
     
     
         <p>
-        Le problème apparaît si on appelle cette fonction dans une autre. En effet, pour la valeur -1, la fonction ne renvoie rien, elle affiche juste un  message.<br/>
-        Par exemple, si on porgramme une fonction qui calcule un taux d'accroissement :
+        Le problème apparaît si on appelle cette fonction dans une autre. En effet, pour la valeur -1, la fonction ne renvoie rien (en réalité, elle renvoie <code>None</code> autrement dit, rien), elle <emp>affiche</emp> juste un  message.<br/>
+        Par exemple, si on programme une fonction qui calcule un taux d'accroissement pour une fonction donnée <code>f</code> sur un intervalle [a, b] :
         <pre>
     def tauxAccroissement(f,a,b):
-        return (f(a) - f(b)) / (a - b) 
+        return (f(a) - f(b)) / (a - b)
         </pre>
-        Cette fonction <code>tauxAccroissement</code> dépend de ce que la fonction <code>f</code> va renvoyer. Donc si on demande le taux d'accroissement de la fonction f entre 1 et 3, pas de souci.
+        Cette fonction <code>tauxAccroissement</code> dépend de ce que la fonction <code>f</code> va renvoyer. Donc si on demande le taux d'accroissement de la fonction f entre 1 et 3, le programme s'exécutera sans souci.
         <pre>
     >>> tauxAccroissement(f,1,3)
     -0.125  
         </pre>
-        Par contre si on demande le taux d'accroissement entre -1 et 3, le message d'erreur n'est pas si clair car la fonction <code>f</code> ne renvoie rien, elle affiche simplement un message. Donc la fonction  <code>tauxAccroissement</code> est incapable d'effectuer le calcul demandé. En outre le message d'erreur n'est pas clair pour tout le monde (pour la petite histoire comme <code>f</code> ne renvoie rien, le message d'erreur nous signale que Python est incapable d'effectuer une soustration entre un Rien et un flottant (nombre décimal)).
+        Par contre si on demande le taux d'accroissement entre -1 et 3, on obtient un message d'erreur un peu long que la plupart des élèves ne liront pas en entier. Eventuellement, ils liront la dernière ligne qui n'est pas vraiment évidente pour un non initié.
         <pre><xmp>
     >>> tauxAccroissement(f,-1,3)
     Attention, -1 est une valeur interdite
@@ -66,10 +66,12 @@
       File "<input>", line 13, in tauxAccroissement
     TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'
         </xmp></pre>
+        Explications : comme la fonction <code>f</code> ne renvoie rien pour la valeur -1 (elle affiche simplement un message), la fonction  <code>tauxAccroissement</code> est alors incapable de récuperer la valeur <code>f(-1)</code> puis d'effectuer le calcul demandé. Le message d'erreur nous signale que Python est incapable d'effectuer une soustration entre rien (<code>NoneType</code>) et un nombre décimal (<code>float</code>).
         </p>
     
     <h4>Une solution, les assertions</h4>
-    L'idée est alors de s'assurer que la fonction est bien utilisée dans les conditions de son utilisation avec le mot clef <code>assert</code>, suivi éventuellement d'une virgule et d'un message d'erreur entre guillemet.
+    <p>
+    L'idée est alors de s'assurer que la fonction est bien utilisée dans les conditions de son utilisation avec le mot clef <code>assert</code>, suivi éventuellement d'une virgule et d'un message d'erreur entre guillemets.
     Dans notre exemple, nous allons nous assurer que la fonction est utilisée pour des valeurs de <code>x</code> différentes de -1.
     <pre>
     def f_v2(x) :
@@ -85,8 +87,42 @@
       File "<input>", line 8, in f_v2
     AssertionError: Attention, -1 est une valeur interdite
     </xmp></pre>
-    La fonction <code>tauxAccroissement</code> est dans l'incapacité d'effectuer sa tache, car elle est bloquée au niveau de l'assertion de la fonction <code>f_v2</code> et surtout nous retrouvons notre message d'erreur end dernière ligne du message d'erreur, on comprend tout de suite le problème.<br/>
+    La fonction <code>tauxAccroissement</code> est à nouveau dans l'incapacité d'effectuer sa tache, car elle est bloquée au niveau de l'assertion de la fonction <code>f_v2</code> et surtout nous retrouvons notre message d'erreur <code>"Attention, -1 est une valeur interdite"</code> en dernière ligne, on comprend tout de suite le problème.<br/>
     <br/>
-    On peut tester ce programme sur basthon en ligne sur le lien <a target="_blank" href="https://console.basthon.fr/?script=eJyNkE1qwzAQhfeB3OHVm1pUoaTdBWLISYosj4rAlox-jI-UnsMX6yiuIYUGOjuNZr735nVkYOpZ4LTfgcsazDifcTj-NEqNwbpUV5eUyCXrneRvUEzIjjCpnnIAT1DobKJKrIvUR8IdJFDKweGIV9QzXnDkuf2uK_of09udBRUjhcQ2nooNif_qrtuPZZLK80Xr4C0LDEysjVSyFadfi7WplcCBQ2mFKBDFj1agUKqKRUbPqoldUIAmzsZ_BjUMJKHGsFwjaF6-dF79dspFdstTNFgqe8MY126voL2LvicYZcMtq6Zp_rTJMbzzHRutozzb5TrQypObHUYy7yYNNZFG_7yGWRqP8Rz_psAXfgNXYp8Q">suivant</a>.
+    On peut tester ce programme sur Basthon en ligne sur le lien <a target="_blank" href="https://console.basthon.fr/?script=eJyNkE1qwzAQhfeB3OHVm1pUoaTdBWLISYosj4rAlox-jI-UnsMX6yiuIYUGOjuNZr735nVkYOpZ4LTfgcsazDifcTj-NEqNwbpUV5eUyCXrneRvUEzIjjCpnnIAT1DobKJKrIvUR8IdJFDKweGIV9QzXnDkuf2uK_of09udBRUjhcQ2nooNif_qrtuPZZLK80Xr4C0LDEysjVSyFadfi7WplcCBQ2mFKBDFj1agUKqKRUbPqoldUIAmzsZ_BjUMJKHGsFwjaF6-dF79dspFdstTNFgqe8MY126voL2LvicYZcMtq6Zp_rTJMbzzHRutozzb5TrQypObHUYy7yYNNZFG_7yGWRqP8Rz_psAXfgNXYp8Q">suivant</a>.
+    </p>
+    
+    
+    <h4>Pour aller (encore) plus loin</h4>
+    <p>
+    En NSI, les enseignants utilisent souvent les assertions couplés à un jeu de tests pour que les élèves puissent savoir si leur programme répond précisément à la demande. Un enseignant pourrait par exemple proposer cet ébauche de code pour programmer une fonction qui permet de savoir si une année est <a target="_blank" href="https://fr.wikipedia.org/wiki/Ann%C3%A9e_bissextile">bissextile</a> ou non :
+    <pre>
+    def est_bissextile(annee):
+        pass
+    
+    # Tests
+    assert est_bissextile(2023) == False, "premier test non réussi"
+    assert est_bissextile(2022) == False, "deuxième test non réussi"
+    assert est_bissextile(2020) == True, "troisième test non réussi"
+    assert est_bissextile(2100) == False, "quatrième test non réussi"
+    assert est_bissextile(2400) == True, "cinquième test non réussi"
+    </pre>
+    L'élève devra alors remplacer le mot clef <code>pass</code> par son code afin de réussir à passer tous les tests en éxécutant le programme.
+    <ul>
+        <li> Voici un <a target="_blank" href="https://console.basthon.fr/?script=eJyVzrEKwkAMBuC90HcIdbHgcJ5OQtc-QXc5bYRAe22THPSR9Dn6Yp46VVC4TEn485EWb4Ci5wuJ4KzU4dZ5j1ie8gxijU7k0-XZBpoYjWPcIev3nTX2UEJVQe06wR0UI2NPyKAxCH7wwMsjiFDxR7ArocUw03LvMckwb6Ph8CKUB5JUY2_M6o8pOOVU5GhWj1zJT-GH8QQTkYhu">lien</a> Basthon vers le programme à compléter. On remarque que si on exécute le programme en l'état, on obtient un seul message d'erreur, celui du premier test car le programme s'arrête si l'assertion n'a pas été réalisé.</li>
+        <li>Un autre <a target="_blank" href="https://console.basthon.fr/?script=eJyV0EEKwjAQBdB9oXf4VAQFF7F2Jbj1BO4ltqMG2rROEuiR7Dl6MdNWkFYUzfKTefmTjM4gY48nZQzVVuW0kFoTLbdhAH-ilFBxeWFZFIS2Sa-lI5aQDjcnLav27nPriWgYUGf0AOZIsNtBPKHuMFnHGgd2NISUG8L7hb30-ZCGwQwHr5swkL4h22nbWMSbZfdQP7RCVDEVirjvBF1qcNs4Y1T0RYhHQkaufu31qyF6o9vNE5ZLZf411kKMekw--DckEaMiqdI398F4ADQfqwY">lien</a> vers un programme qui n'est pas totalement fonctionnel puisqu'il échoue au quatrième test.</li>
+        <li>Un dernier <a target="_blank" href="https://console.basthon.fr/?script=eJyVkEEKwjAQRfeF3mGoCBZcxNqV0K0n6F6inUKgjXYmgR5Jz9GLmRZBE6nS2SV__pv5U2ENyOZ0VszYG9XgRmqNmB7iCFypGqY3rCGHogDx-g81IUJ1LEJjSUNJFt8CNh_G3WSc8R1lw56REf5NCJu-UXG0gtJl5jiSLjSZ8ACZyPbpGGcybSG5EbYKCYxrBH3VQMPDMqvkByHzCBXaXg33FhcxxMQYszmEoavipQx3Xm-PzkpDSyG58Ba5KN3ZGcYT05C2Eg">lien</a> vers un programme totalement fonctionnel. Lorsque l'on exécute le programme, aucun message ne s'affiche puisqu'il n'y a eu aucune erreur.</li>
+    </ul>
+    </p>
+    
+    
+    
+    
+    
     </body>
+    
+    
+    
+    
+    
 </html>
