@@ -22,8 +22,63 @@
             <td><a href="modularite.html">La modularité</a></td></tr>
         </tbody>
         </table>
-        <h1>Les flottants (les nombres décimaux en Python)</h1>
+        <h1>Les flottants</h1>
+        <h4>Les nombres décimaux en Python</h4>
+        <p>
+        Comme chacun sait, toute donnée numérique est codée en binaire, mais peu savent quellent peuvent en être les conséquences. Ainsi en informatique nous avons ce qu'on appelle des <a target="_blank" href="https://fr.wikipedia.org/wiki/Virgule_flottante">nombres flottants ou nombres à virgule flottante</a> (<code>float</code> en Python). Derrière ce nom bizarre se cache les nombres décimaux. Pourquoi ce nom de <emp>"flottant"</emp> ? Parce que ces nombres sont codés en binaire d'une manière qui fait penser à ce qu'on appelle en mathématique la notation scientifique. La partie entière de la notation scientifique est toujours un nombre entre 1 et 9, ce qui donne l'impression de flotter comme un bouchon dand l'eau. En outre cette notation permet un gain de place mémoire pour l'ordinateur qui n'a pas besoin de stocker les zéros non significatifs.<br/>
+        <math> 
+        <mtable> 0,000435 = 4,35 <mo>.</mo><msup><mi>10</mi><mn>-4</mn></msup>
+        </mtable>
+        </math><br/>
+        <math>
+        <mtable> 43500 = 4,35 <mo>.</mo><msup><mi>10</mi><mn>4</mn></msup>
+        </mtable>
+        </math>
+        </p>
         
-        <strong><emp>Work in Progress !!!!</emp></strong>
+        <h4>Quel est le problème ?</h4>
+        <p>
+        On imagine assez bien que des nombres ayant une partie décimale infinie ne pourront pas être convertis en binaire puis stockés entièrement dans la mémoire d'un ordinateur. On doit alors procéder à des approximations. Mais ce que l'on n'imagine pas c'est que du fait de la conversion en binaire, des nombres décimaux totalement anodins ne peuvent être convertis de manière exacte en binaire ! C'est le cas par exemple du nombre décimal 0,1 dont la conversion en binaire est 0,000110011001100110011... ce qui oblige l'ordinateur à effectuer une approximation. On peut le constater en effectuant simplement l'opération suivante :
+        <pre>
+    >>> 0.1+0.2
+    0.30000000000000004
+        </pre>
+        On constate qu'il y a effectivement un problème.
+        </p>
+        
+        <h4>Quelle conséquence ?</h4>
+        <p>
+        Il ne faut <strong>JAMAIS</strong> effectuer des tests d'égalité sur des nombres flottants !!!!
+        <pre>
+    >>> 0.1+0.2 == 0.3
+        False
+        </pre>   
+                
+        Nous serions pourtant tenter de le faire de nombreuses fois. Par exemple, étant donné les coordonnées entières de trois points dans un repère orthonormé, si on souhaite déterminer la nature du triangle obtenu, il ne faut surtout pas comparer les distances qui sont des nombres flottants car obtenus par la fonction racine carrée. Dans ce cas, il est préférable de comparer les distances au carré qui restent des nombres entiers. On retrouve cet exemple dans le <a href="sialors.html#distanceaucarree">problème 2</a>  de la Deuxième partie sur les structures conditionnelles.
+        </p>
+
+        <h4>Une solution ?</h4>
+        <p>
+        Plutôt que de tester l'égalité de deux nombres flottants, on testera leur proximité en tenant compte de l'erreur machine qui est par défaut de l'ordre de <math><msup><mi>10</mi><mn>-16</mn></msup></math>. On testera donc si la valeur absolue <code>abs</code> de la différence entre deux nombres est inférieure à <math><msup><mi>10</mi><mn>-15</mn></msup></math>.
+        <pre><xmp>
+    >>> a = 0.1+0.2
+    >>> b = 0.3
+    >>> a == b
+    False
+    >>> abs(a-b) < 1e-15
+    True
+        </xmp></pre>
+        Pour information, il existe également une fonction <code>isclose</code> du module <code>math</code> (ou du module <code>numpy</code>) qui permet de savoir si deux nombres sont proches. Mais l'usage de ces deux fonctions n'est pas toujours très aisé dans la pratique. En outre, bien que ces deux fonctions aient le même nom, elles n'effectuent pas exactement la même tache.
+        <pre>
+    >>> a = 0.1+0.2
+    >>> b = 0.3
+    >>> a == b
+    False
+    >>> from math import isclose
+    >>> isclose(a,b)
+    True
+        </pre>
+        </p>
+        
     </body>
 </html>
