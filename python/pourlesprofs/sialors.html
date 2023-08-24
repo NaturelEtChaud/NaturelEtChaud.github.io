@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Une introduction à Python pour les Math au lycée</title>
+        <title>Une introduction à Python pour les Maths au lycée</title>
         <meta name="description" content="An interactive introduction to Python for Maths.">
         <link rel="stylesheet" href="main.css">
     </head>
@@ -31,7 +31,7 @@
             SI ALORS
         -->
         <li><strong>SI</strong> une condition est vérifiée <strong>ALORS</strong> on effectue une ou plusieurs instructions.<br>
-        En Python, on commence par le mot clef <code>if</code> suivi de la condition à vérifier. Cette ligne est toujours terminée par deux points <code>:</code>. Ces deux points signifie <strong>ALORS</strong>. Après ces deux points, comme pour les fonctions, on valide la ligne avec la touche <kbd>Entrée</kbd>. Le curseur se place directement à la ligne avec une indentation. Chaques instructions qui doivent être exécutées si la condition est respectée doivent garder au minimum cette indentation.
+        En Python, on commence par le mot clef <code>if</code> suivi de la condition à vérifier. Cette ligne est toujours terminée par deux points <code>:</code>. Ces deux points signifie <strong>ALORS</strong>. Après ces deux points, comme pour les fonctions, on valide la ligne avec la touche <kbd>Entrée</kbd>. Le curseur se place directement à la ligne suivante avec une indentation. Chaque instruction qui doit être exécutée si la condition est respectée doit garder au minimum cette indentation.
         <pre>
     if condition :
         instruction1
@@ -46,7 +46,7 @@
     if prix > 150 :
         nouveau_prix = prix * (1 - 5/100)
         </pre>
-        ou encore
+        ou mieux encore
         <pre>
     if prix >= 150 :
         prix = prix * (1 - 5/100)
@@ -55,17 +55,17 @@
         Les conditions sont obtenues en testant deux expressions avec les symboles suivants :
         <table width = 100%>
             <tbody>
-            <tr><td>est-ce que A égale B</td>  <td><code>A == B</code></td>
+            <tr><td>est-ce vrai que A égale B ?</td>  <td><code>A == B</code></td>
                 </tr>
-            <tr><td>est-ce que A est plus grand que B</td>  <td><code>A > B</code></td>
+            <tr><td>est-ce vrai que A est plus grand que B ?</td>  <td><code>A > B</code></td>
                 </tr>
-            <tr><td>est-ce que A est plus grand ou égal à B</td>  <td><code>A >= B</code></td>
+            <tr><td>est-ce vrai que A est plus grand ou égal à B ?</td>  <td><code>A >= B</code></td>
                 </tr>
-                <tr><td>est-ce que A est plus petit que B</td>  <td><code>A < B</code></td>
+                <tr><td>est-ce vrai que A est plus petit que B ?</td>  <td><code>A < B</code></td>
                 </tr>
-            <tr><td>est-ce que A est plus petit ou égal à B</td>  <td><code>A <= B</code></td>
+            <tr><td>est-ce vrai que A est plus petit ou égal à B ?</td>  <td><code>A <= B</code></td>
                 </tr>
-            <tr><td>est-ce que A n'est  pas égal à B</td>  <td><code>A != B</code></td>
+            <tr><td>est-ce vrai que A n'est  pas égal à B ?</td>  <td><code>A != B</code></td>
                 </tr>
             </tbody>
         </table>
@@ -79,7 +79,7 @@
             SI ALORS SINON
         -->
         <li><strong>SI</strong> une condition est vérifiée <strong>ALORS</strong> on effectue une ou plusieurs instructions <strong>SINON</strong> on effectue une ou plusieurs autres instructions.<br>
-        En Python, on garde le premier bloc avec le <code>if</code> et l'ensemble des instructions à effectuer si la condition est vérifiée. Pour la ligne suivante, on supprime l'indentation pour signifier que l'on va passer à un autre cas. On écrit <code>else :</code> pour <strong>SINON</strong>. On valide la ligne avec la touche <kbd>Entrée</kbd> et on crée visuellement un bloc d'une autre série d'instructions qui doivent être exécutées si la condition n'est pas respectée. Visuellement, on a bien deux blocs d'instructons.
+        En Python, on garde le premier bloc avec le <code>if</code> et l'ensemble des instructions à effectuer si la condition est vérifiée. Pour la ligne suivante, on supprime l'indentation pour signifier que l'on va passer à un autre cas. On écrit <code>else :</code> pour <strong>SINON</strong>. On valide la ligne avec la touche <kbd>Entrée</kbd> et on crée visuellement un bloc d'une autre série d'instructions qui doivent être exécutées si la condition n'est pas respectée. Visuellement, on a bien deux blocs d'instructions bien distincts.
         <pre>
     if condition :
         instruction1
@@ -112,7 +112,7 @@
         <!--
             SINON SO 
         -->
-        <li> Lorsque l'on une disjonction de plus de 2 cas. On utilise alors le mot clef <code>elif</code> (contraction de <strong>ELSE IF</strong>) suivi d'une nouvelle condition à vérifier si la précédente ne l'a pas été, suivie des deux points <code>:</code> habituels et d'une nouvelle indentation. On peut rajouter autant de blocks <code>elif</code> que nécessaire.
+        <li> Lorsque l'on a une disjonction de plus de 2 cas. On utilise alors le mot clef <code>elif</code> (contraction de <strong>ELSE IF</strong>) suivi d'une nouvelle condition à vérifier si la précédente ne l'a pas été, suivie des deux points <code>:</code> habituels et d'une nouvelle indentation. On peut rajouter autant de blocks <code>elif</code> que nécessaire. Cette série de blocks peut se terminer par un <code>else :</code> pour gérer tous les autres cas non détaillés.
         <pre>
     if condition :
         instruction1
