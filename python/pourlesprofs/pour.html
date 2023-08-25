@@ -236,6 +236,71 @@
             </details>     
         </p>
     
-        <strong><emp>Work in Progress !!!!</emp></strong>
+        <h4>Exercice 4</h4>
+        <p>
+            <ol>
+            <li>Ecrire une fonction qui permet de vérifier si un nombre entier est premier.</li>
+            <li>Ecire un programme qui permet d'obtenir la liste des nombres premiers inférieurs ou égaux à 666.</li>
+            <li>Ecrire un programme qui permet d'obtenir la liste des <a taget="_blank" href="https://fr.wikipedia.org/wiki/Nombre_premier_de_Sophie_Germain">nombres premiers de Sophie Germain</a> inférieurs ou égaux à 666.</li>
+            </ol>
+            <table width = 100%>
+            <tbody>
+            <tr><td><a target="_blank" href="https://console.basthon.fr/">Lien Basthon pour programmer</a></td>
+                <td><a style = "text-align :right" target="_blank" href="https://console.basthon.fr/?script=eJzFks9Kw0AQxu8L-w4DQWpVxLbQg9CCF5-gNxHZJNN2IZ1d90_oI-lz9MWcTY1NKtjSi5NDkp3Z_b79zWTZ3yFFBu8RfdCGYMR_J-tLXALXv1mHG43umvLhoxTA4dAa8ggzWLiI-7WlcVDqGjSBU7TC6_HdYUMKvQTK4aopms3goZNKkQH7qjVSgBIhOBNrdIDU1MfmpT1Gl7KU9_ce_DyrymNrMkRHba6_QQopBoOBFAu-IJSKPFQKCi40FYKqsQBrWIsNl-jZRWAAHlSEYm30Vor5fN5jM5oMv09Mz2m2nV6Mz6mvtA_Yqnm-6MtrEkrQ2WOH-XQ6baHrX-2DDvP-iffKWqQyFf2webJu98GX3-4-i9hYLSNYZ1ZObTaY2mUxBhYP6HiVu3UMkj8bGSlMHpDSqCRwfelLuU3O5-aNXWu8lFp_hrvJ8Q3lt6Ph0SR3Nf-B61640foC7_wWhg">Lien pour la correction</a></td>
+                </tr>
+            </tbody>
+            </table>
+            <details>
+            <summary> Aide 1</summary>      
+            <div>
+            La fonction qui permet de vérifier si un nombre est premier doit renvoyer un <code>True</code> ou un <code>False</code> afin de pouvoir réutiliser cette fonction aux questions 2 et 3.
+            </div>
+            </details>
+            <details>
+            <summary> Aide 2</summary>      
+            <div>
+            Pour savoir si un nombre nb est premier on vérifiera s'il n'est divisible par aucun des entiers entre 2 et nb-1.
+            </div>
+            </details>
+            <details>
+            <summary> Remarques sur la correction proposée</summary>      
+            <div>
+            On pourrait gagner en efficacité en modifiant certains points de ce code :
+                <ol>
+                <li>Dans la fonction <code>est_premier</code> il serait plus judicieux d'utiliser une boucle TANT QUE. On en reparle dans la prochaine partie.</li>
+                <li>Pour les nombres premiers de Sophie Germain, plutôt que de tester si nb un nombre premier puis s'il est un nombre premier de Sophie Germain, on pourrait interroger directement la lmiste des nombres premiers obtenue à la question précédente. Cette solution est hors programme en seconde.</li>
+                </ol>
+                Voici dans ce <a target="_blank" href="https://console.basthon.fr/?script=eJzFU81OwkAQvjfpO4xpTEHUCCQcSCDx4hN4M8Zs2wE2aWfr_qCP41F9jb6Ysy1oW40QLy4JYWe_ne9nhyj6fYVBBI8OjZWKYMy7g_gMV8D4h1JjIVEPKBnOwwB4ZXILC5g0m6eNzBEogdO6frKAqx1sv6L6gGJuBqUwficNOg2Zv9fHsjwGGYTqBfIYyTI3GCe3gmwX28jw3yPvyJfkqqkuvKCWjAhY485Ijx80UqrI6urN24XcyYuiei-wfTutxTsCUkWiP1t9QTSWilj0AuBWu91dzLky_wl0I_ioOdBonab9WddhGIRBHMdhcOvpM0EGcgGs1ij2I7aYQqnYCLvI0EATlgHhIN0o-RwGy-Wy84bj6XDX0X8Oz0BrZibH4HNpLO7ZDBu9u_dEK1VrlGxT0BoHk_PZbLafJvltzNqZdTteirJEyjzoM5vrUlevbP65ektdLTVz_EBqrUVRYD1P6CyTW9Rc9QPQC5J_1jRhoBKL5J_PB9el_mtu0-NzM6rcSPwhta6SVjq97CZnlIzGw97_r938HwJsiGuuD8PmP14">lien</a> une solution différente qui tient compte de toutes ces remarques.
+            </div>
+            </details>
+        </p>
+
+        <h4>Problème</h4>
+        <p>
+            On dispose d'une feuille cartonnée rectangulaire de longueur 100 cm et de largeur 30 cm. <br/>
+            <img src="images/exercice_boite_1.png"><br/>
+            On décide de couper aux 4 coins de cette feuille des carrés de dimensions identiques. En pliant suivant les pointillés, on obtient alors une boite de la forme d'un pavé droit. <br/>
+            <img src="images/exercice_boite_2.png"><br/>
+            Déterminer la longueur du côté de chacun des 4 carrés à découper afin que la boîte ait la plus grande contenance possible. On donnera le résultat sous la forme d'une valeur arrondie au centième.
+            <table width = 100%>
+            <tbody>
+            <tr><td><a target="_blank" href="https://console.basthon.fr/">Lien Basthon pour programmer</a></td>
+                <td><a style = "text-align :right" target="_blank" href="https://console.basthon.fr/?script=eJzFlM1u00AQx--W8g4jcYhd3OCENIQiUvUOEpyrqtrak3Yle9fsR-RHSjjzBn4xZtdZKwVaGhKVjaysR__5_skFLmEZN8n5IAI6Co1VAuJxlsEpTE6a5CR-21-bThTOIHK_V385pKCw-T0qeqCwULGGV7aCmil6NBQI4-eEKbk2eFNLLoyGj3B17bIvpYIGuADFxB3GWQrjWWjGS0kZN6nvMenMu3FGrK5RFLF_S1zA4XA4iL5a1IZLAecUxKpvVvI-AcWHC3ec-rJW7VoDNu0mt96DGqyVvFOsqhDovUZrqD6DiqyooGBCQ8kgl0LLEt3VFzSI5K1BYemyWCweFOkSfcJ-bhqrW3JkpVSUWRvYOoK2Csqhz7ViJUmuZvAB5tfbpo6zqmy097JuCt5wpHHsLi3Ydlc3GYfVNaSdwete9QbG2bOXGvI9stzPrLxHq9DSIJFidelnKbxPXXeJnymvaqk1p0GnUKJ2E2BVuzaK7oXkK-fYfqdXoBtHpV-MhtDdAVSkc-LiXZodm4xsfzRyP75f2OiNT8AxmhMevdDxsQcgwe8RQl5mj6GIgxY5pU3S38zP7kv4VhGh5tSVSQZt-YowZSvMwQrCNWeF6shntptgu6au2JKmXQx9Nq4GEWkZdScK_lB3cWxo_oGaipflb9T0xiepmRI2vdJjswc3wfG_chOKOIibs0kHztnUz--SC83pQ9dH2w3gKKJdacgJiHbj95a3P0y78REgr_5Iymg7lZ9DUX-A">Lien pour la correction</a></td>
+                </tr>
+            </tbody>
+            </table>
+            <details>
+            <summary> Aide 1</summary>      
+            <div>
+            Une fois modelisée la fonction mathématique qui donne la contenance de la boîte en fonction de la longueur du côté des 4 carrés découpés, on peut obtenir des listes de couples (valeur, image) pour des valeurs allant de 1 en 1, puis de 0,1 en 0,1, ...
+            </div>
+            </details>
+            <details>
+            <summary> Aide 2</summary>      
+            <div>
+            Cette fonction est : <math><mtable><mtr>f(<mi>x</mi>)=(<mi>100</mi> - 2<mi>x</mi>)(<mi>30</mi> - 2<mi>x</mi>)<mi>x</mi> </mtr></mtable></math>.
+            </div>
+            </details>
+        </p>
     </body>
 </html>
