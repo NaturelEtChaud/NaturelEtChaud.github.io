@@ -49,10 +49,15 @@ emp {
     font-style: italic;  
 }
 
-td{
-    width: 20%;
+td, th{
+    width: 16%;
+    border-radius: 5px;
     text-align: center;
     background-color: #fff;
+}
+
+th{
+    font-weight: 600;
 }
 
 kbd {

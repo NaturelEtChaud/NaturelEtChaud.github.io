@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Une introduction à Python pour les Maths au lycée</title>
+        <title>Une introduction à Python pour les Maths en seconde</title>
         <meta name="description" content="An interactive introduction to Python for Maths.">
         <link rel="stylesheet" href="main.css">
     </head>
@@ -12,11 +12,12 @@
         <table width = 100%>
         <tbody>
         <tr><td><a href="index.html">Accueil</a></td>
-            <td><a href="fonction.html">Première partie <br/>Fonction</a></td>
-            <td>Deuxième Partie <br/>Structure conditionnelle</td>
-            <td><a href="pour.html">Troisième Partie <br/>Boucle POUR</a></td>
-            <td><a href="tantque.html">Quatrième Partie<br/>Boucle TANT QUE</a></td></tr>
-        <tr><td colspan = "2">Pour aller plus loin</td>
+            <td><a href="variables.html">Première partie <br/>Variables</a></td>
+            <td><a href="fonction.html">Deuxième partie <br/>Fonction</a></td>
+            <td>Troisième Partie <br/>Structure conditionnelle</td>
+            <td><a href="pour.html">Quatrième Partie <br/>Boucle POUR</a></td>
+            <td><a href="tantque.html">Cinquième Partie<br/>Boucle TANT QUE</a></td></tr>
+        <tr><td colspan = "3">Pour aller plus loin</td>
             <td><a href="assertions.html">Les assertions</a></td>
             <td><a href="flottants.html">Les nombres flottants</a></td>
             <td><a href="modularite.html">La modularité</a></td></tr>
@@ -267,7 +268,7 @@
             </details>    
         </p>
          
-        <h4>Problème 2</h4>
+        <h4 id="distanceaucarree">Problème 2</h4>
         <p> 
             Ce problème est une suite du problème de la première partie sur les fonctions.
             <ol>
@@ -288,7 +289,8 @@
             <details>
             <summary> Aide </summary>      
             <div>
-                Utiliser les fonctions de l'exercice 3 de la première partie sur les fonctions. Pour la fonction <code>distance</code>, on la modifiera légèrement en <code>distanceAuCarre</code> pour donenr la distance au carré, ainsi on n'utilise plus la fonction <code>sqrt</code> qui renvoie des valeurs décimales (en informatique on dit des nombres flottants) et approchées . Lorsque l'on effectue des tests d'égalités il est possible d'obtenir alors des réponses fausses alors qu'il y a bien égalité. Sans rentrer dans les détails, on peut tester : <code>0.1 + 0.2 == 0.3</code> !!!
+                Utiliser les fonctions de l'exercice 3 de la première partie sur les fonctions. Pour la fonction <code>distance</code>, on la modifiera légèrement en <code>distanceAuCarre</code> pour donenr la distance au carré, ainsi on n'utilise plus la fonction <code>sqrt</code> qui renvoie des valeurs décimales (en informatique on dit des nombres flottants) et approchées . Lorsque l'on effectue des tests d'égalités il est possible d'obtenir alors des réponses fausses alors qu'il y a bien égalité. Sans rentrer dans les détails, on peut tester : <code>0.1 + 0.2 == 0.3</code> !!! <br/>
+                Pour aller plus loin, vous pouvez lire la page sur les <a href="flottants.html">nombres flottants</a>.
             </div>
             </details>    
         </p>
@@ -297,5 +299,12 @@
         <p>
         Dans les problèmes 1 et 2, on peut remarquer à chaque fois que le programme est décomposé en sous-programmes, la fonction finale utilisant une ou plusieurs autres fonctions déjà définies. Cette façon de faire permet de simplifier l'écriture et la lecture d'une fonction principale. Par exemple, si un quadrilatère est un losange et un rectangle alors c'est un carré. De plus, en cas de bogue, comme les fonctions secondaires ont déjà été programmées et testés en amont, l'erreur doit se trouver dans la fonction principale.
         </p>
+        
+        
+
+
+
+    <br/><br/><br/><br/>
+    <p><center><emp>--*-- Laurent Chaudet - 2023 --*--</emp></center></p>
     </body>
 </html>

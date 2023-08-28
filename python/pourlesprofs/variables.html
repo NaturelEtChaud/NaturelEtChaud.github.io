@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Une introduction à Python pour les Maths au lycée</title>
+        <meta name="description" content="An interactive introduction to Python for Maths.">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+         <table width = 100%>
+        <tbody>
+        <tr><td><a href="index.html">Accueil</a></td>
+            <td>Première partie <br/>Variables</td>
+            <td><a href="fonction.html">Deuxième partie <br/>Fonction</a></td>
+            <td><a href="sialors.html">Troisième Partie <br/>Structure conditionnelle</a></td>
+            <td><a href="pour.html">Quatrième Partie <br/>Boucle POUR</a></td>
+            <td><a href="tantque.html">Cinquième Partie<br/>Boucle TANT QUE</a></td></tr>
+        <tr><td colspan = "3">Pour aller plus loin</td>
+            <td><a href="assertions.html">Les assertions</a></td>
+            <td><a href="flottants.html">Les nombres flottants</a></td>
+            <td><a href="modularite.html">La modularité</a></td></tr>
+        </tbody>
+        </table>
+        <h1>Les variables</h1>
+        <p>
+        Pour commencer à prendre en main le langage Python, on peut effectuer quelques petites manipulations autour des variables. Il ne me semble pas utile en mathémtiques de parler des différents types de variables autre que les entiers <code>int</code> et les nombres décimaux (ou nombres à virgule flottante ou encore flottant) <code>float</code>. Les chaines de caractères sont inutiles puisque je n'utilise ni la fonction <code>print</code> ni la fonction <code>input</code>. On pourra aller plus loin sur la notion de flottants en suivant ce <a href="flottants.html">lien</a>. <br/>
+        
+        En ce qui concerne le travail sur les variables le plus simple à mon sens est de leur proposer des programmes de calcul comme ceux déjà vus au collège. On pourra aussi dès le départ, montrer l'intérêt de d'utiliser des fonctions.<br/>
+            
+        Pour rappel, les différentes opérations possibles pour les nombres sont les suivantes :
+        <table width = 100%>
+        <tbody>
+        <tr><th>Opération</th>
+            <th>Traduction en Python</th>
+            <th>Opération</th>
+            <th>Traduction en Python</th>
+        </tr>
+        <tr><td>Somme de a et de b</td>
+            <td><code>a + b</code></td>
+            <td>Différence de a par b</td>
+            <td><code>a - b</code></td>
+        </tr>
+        <tr>
+            <td>Produit de a et de b</td>
+            <td><code>a * b</code></td>
+            <td>Quotient décimal de a par b</td>
+            <td><code>a / b</code></td>
+        </tr>
+        <tr>
+            <td>Quotient entier de a par b</td>
+            <td><code>a // b</code></td>
+            <td>Reste du quotient entier de a par b (modulo)</td>
+            <td><code>a % b</code></td>
+        </tr>
+        <tr>
+            <td>a exposant b</td>
+            <td><code>a ** b</code></td>
+            <td>racine carrée de a sans passer par la fonction racine du module <code>math</code></td>
+            <td><code>a ** 0.5</code></td>
+        </tr>
+        </tbody>
+        </table>
+            
+        
+        </p>
+        
+        <!--
+            Exercices
+        -->
+        <h2>Des exercices</h2>
+        <h4>Exercice 1</h4>
+        <p>
+            <emp>[D'après le Brevet du 14 juin, Centres étrangers groupe 1]</emp><br/>
+            Amir et Sonia ont chacun inventé un programme de calcul.<br/>
+            <table width = 100%>
+            <tbody>
+            <tr><td>
+            Programme d'Amir :
+            <ul>
+            <li>Choisir un nombre</li>
+            <li>Soustraire 5</li>
+            <li>Prendre le double du résultat</li>
+                </ul></td>
+            <td> 
+            Programme de Sonia :    
+            <ul>
+            <li>Choisir un nombre</li>
+            <li>Ajouter 3</li>
+            <li>Multiplier le résultat par le nombre choisi</li>
+            <li>Soustraire 16</li>
+            </ul></td>
+            </tr>
+            </tbody>
+            </table>
+                <ol>
+            <li>Montrer que si le nombre choisi au départ est 6 alors on obtient 2 avec le programme d’Amir et on obtient 38 avec celui de Sonia.</li>
+            <li>Vérifier qu'avec le nombre de départ 2, les programmes d'Amir et de Sonia donnent le même résultat.</li>
+            <li>Existe-t-il d'autres nombre de départ qui donnent le même résultat avec ces deux programmes de calcul.</li>
+            </ol>
+            <table width = 100%>
+            <tbody>
+            <tr><td><a target="_blank" href="https://console.basthon.fr/">Lien Basthon pour programmer</a></td>
+                <td><a style = "text-align :right" target="_blank" href="https://console.basthon.fr/?script=eJydUktqwzAQ3Rt8h4Es3KT2IjHNotBAoPsWeoAyscdFkEiuPqZXyjlysY4kO3ECTdNqo3kjzdObN5pMrq80mcCnI2OFkjBn9Ot9X9Eqp2G9EzpNEJ5g2W9QwEMMFzAD9HezLEuTV39dbSxJoWGL0OGWONMIyQHUBJhDjdL4s0pJozjboNCUJqvVyhMFmuPLb0oKTpr3mlrUNiowvB0z91D2GRYyZIdMAfPl7drMVW3mpO0vTi9udXrdUcUqDDRKVr6UH6ypAWTz7-Rm-pgmwMt7LjenGOMoBtiPw0NN1mk5oEhmvJ8jNjNii5YFP09wdnEcHR3Rmx_85Ua6w16LRlQYusmBvg77ylnyp9Bq9aFxt6McWidMdPrS__5XeAcW034MoQOP_jON8rZpBOrncy05x7Ki2NpxRkEckI26AMMQM3RWewPCD2OHXiRYrVxHGj2jPuxbrqX4x4ty1GZRnvUZIKv5Br-m9QA">Lien pour la correction</a></td>
+                </tr>
+            </tbody>
+            </table>
+            <details>
+            <summary> Aide </summary>      
+            <div>
+            Attention à bien utiliser le mot clef <code>return</code> et non pas la fonction <code>print</code> si vous définissez une fonction. Vous en sourez plus dans la partie <a href="fonction.html">suivante</a> à ce sujet.
+            </div>
+            </details>     
+        </p>
+        
+            
+        <h4>Exercice 2</h4>
+        <p>
+            Quelles seront les valeurs des variables a, b et éventuellement c après exécution des affectations suivantes ?
+            <ol>
+            <li>
+            <pre>
+        a = 2
+        b = a - 3
+        a = 3
+            </pre>
+            <details>
+            <summary> Réponse </summary>      
+            <div>
+            a = 3 et b = -1
+            </div>
+            </details>
+            </li>
+            <li>
+            <pre>
+        a = 15
+        b = - 8
+        c = a + b
+        a = 6
+        c = b - a
+            </pre>
+            <details>
+            <summary> Réponse </summary>      
+            <div>
+            a = 6, b = -8 et c = -14
+            </div>
+            </details>
+            </li>
+            <li>
+            <pre>
+        a = 15
+        b = - 8
+        b = a + b
+        a = 6
+        c = b - a
+            </pre>
+            <details>
+            <summary> Réponse </summary>      
+            <div>
+            a = 6, b = 7 et c = 1
+            </div>
+            </details>
+            </li>
+            <li>
+            <pre>
+        a = 5
+        b = 2
+        b = a
+        a = b
+            </pre>
+            <details>
+            <summary> Réponse </summary>      
+            <div>
+            a = 5 et b = 5<br/>
+            Malheuresement les variables a et b n'ont pas été échangées ...
+            </div>
+            </details>
+            </li>
+            </ol>    
+        </p>
+        
+        <h4>Exercice 3</h4>
+        <p>
+            On souhaite échanger les valeurs des variables a et b. Autrement dit, a vaut 5 et b vaut 2. Une fois le code exécuté ce sera le contraire.
+            <pre>
+        a = 5
+        b = 2
+        ...
+            </pre>
+            <table width = 100%>
+            <tbody>
+            <tr><td><a target="_blank" href="https://console.basthon.fr/">Lien Basthon pour programmer</a></td>
+                <td><a style = "text-align :right" target="_blank" href="https://console.basthon.fr/?script=eJwljbENwzAMBHsC3IGdmlQBUkYzZAXKphMBEhVIlpGVPIcXM-VU9_9XPNOTHgjBcEdYJX-LRUZgQ_iLa0VAcM4hvEqvtB17jUuUSskd-_RhfcuNFo5VKEmjWfqPppIz62y19bixrkOwNkpsTltJguC9H3cD4Xo4AQNjK40">Lien pour la correction</a></td>
+                </tr>
+            </tbody>
+            </table>
+            <details>
+            <summary> Aide </summary>      
+            <div>
+            Il faut utiliser une variable supplémentaire temporaire.
+            </div>
+            </details>
+        </p>
+
+        
+
+
+
+    <br/><br/><br/><br/>
+    <p><center><emp>--*-- Laurent Chaudet - 2023 --*--</emp></center></p>
+    </body>
+</html>
