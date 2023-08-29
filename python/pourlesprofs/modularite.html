@@ -25,7 +25,62 @@
         </table>
         <h1>La modularité</h1>
         
-        <strong><emp>Work in Progress !!!!</emp></strong>
+        <p>
+        La modularité est un principe essentiel en programmation. L'idée est de découper son programme en de petits sous-programmes. Autrement dit, éviter de programmer une énorme fonction qui fait plus de 500 lignes, mais plutôt l'écrire avec de ptites fontions qui s'appellent les unes après les autres. Les intérêts sont multiples :
+            <ul>
+            <li>le programme sera plus facile à écrire car il sera composé de petits taches simples à écrire puis à vérifier au fur et à mesure</li>
+            <li>s'il y a un bug, il sera plus facile à trouver car l'erreur sera présent dans une petite fonction</li>
+            <li>les sous-programmes écrits peuvent être utiles dans d'autres cas</li>
+            </ul>
+        Par contre cette façon de programme implique d'anticiper en amont le découpage du programme en sous-taches et surtout d'utiliser le mot-clef <code>return</code> à la fin de chaque fonction afin de pouvoir récupérer le résultat obtenu plutôt que la fonction <code>print</code>.
+        </p>
+        
+        <h4>Un mauvais exemple</h4>
+        Avec la fonction <code>print</code> :
+        <pre>
+    def f(x):
+        print(x**2 - 3*x + 1)
+    
+    def tauxAccroissement(f,a,b):
+        return (f(a) - f(b)) / (a - b) 
+        </pre>
+        Dans cet exemple, si on veut calculer les images par f des nombres -2, 4, 3, nous avons l'impression que tout se passe bien.
+        <pre>
+    >>> f(-2)
+    11
+    >>> f(4)
+    5
+    >>> f(3)
+    1
+        </pre>
+        Par contre, si vous taper la commande suivante dans la console, vous obtenez un message d'erreur car la fonction <code>f</code> ne revnoie rien et la fonction <code>tauxAccroissement</code> ne peut effectuer le calcul demandé.
+        <pre><xmp>
+    >>> tauxAccroissement(f, -2, 4)
+    11
+    5
+    Traceback (most recent call last):
+    File "<input>", line 1, in <module>
+    File "<input>", line 5, in tauxAccroissement
+    TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'>>> tauxAccroissement(f, -2, 4)
+        </xmp></pre>
+        
+        
+        <h4>Un bon exemple</h4>
+        Avec le mot clef <code>return</code>
+        <pre>
+    def f_v2(x):
+        return x**2 - 3*x + 1 
+        </pre>
+        Pour le calcul du taux d'accroissement, nous n'avons plus de problème.
+        <pre>
+    >>> tauxAccroissement(f_v2, -2, 4)
+    -1.0
+        </pre>
+        On pourra tester ces deux exemples sur Basthon sur le lien <a target="_blank" href="https://console.basthon.fr/?script=eJyVkU1qwzAQhfcG3-GBF7ZTm1Knqy4CuUPotozscRDYktGPMT1Re45crLLjJBQSaLXRSBo-zXsvSe6vOErQMXryI0kLnrgfOg63D_vjqOEWbTblb3GEsAYjlcumzaZCie1mwhNe8vPTudeRn_Z1bbS0lnsOzW0BKiAuBMPOG4WszSgPjDYTeY5nZBQO4opK0zSO9oM5fc1znr5r76RWaHyYQB8N9T0XcGwdGzSkLDpCrZXVs57dbhe4ZZVfytdrtQ3VQXuHMJwIXgxkWpJu_XDdDmcuK-ulW3l3dZVVgZn9rr2FFo4Vf8Ir9GwtHRlNysawN1f8Y6eXZESQ-PdUPsbqFsxq6-9k_qsoEG-iFptGgpCsFswP0RWYfg">suivant</a>.
+        </p>
+
+        <h4>Un dernier très bon exemple</h4>
+        Dans le <a href="sialors.html#distanceaucarree">problème 2</a> de la partie sur les structures conditionnelles, nous avons vu un très bon exemple de modularité. Connaissant les coordonnées de 4 points dans un repère orthonormé, nous souhaitons savoir la nature du quadrilatère obtenu. Pour y parvenir, j'ai d'abord écrit une fonction qui calcule les coordonnées du milieu de deux points et une autre fonction qui calcule la distance entre deux points. J'utilise ensuite ces deux fonctions dans mes fonctions principales. On peut retrouver le programme sur Basthon en suivant ce <a style = "text-align :right" target="_blank" href="https://console.basthon.fr/?script=eJzlVttO20AQfY-UfxiRhzjUUZtLQaoUJDsREg-VekF9rbb2gozMOuylcvpFTZ_7B_6xnvXaJISQC0K0qEEwm9mdObNnz-zSam3-NBstOs1EpJNMKIo5fWOKw7k1rNmI-QVFWSbjTAjO3ydpwo2XBz7N8JuHsGHnXbNB-ORnNCLM0StMdF73nXdWemfWO1t4JddGCoQgwZlzrWJ94ZHmRj4EZpA2D6lLeVABWc_MembBXRCDQLMMEnPN5XUimNBejkkkn8rkmmNY2hqkTkCH1YSFcwN4anriRGkmIh6YMZOSP1DwwcGBG5xFCV21WUJGg01VzClldJHJa5Nyezb4JvAN47YR9N2xQFyQLOYuBGW7VGWgO9b7xAXhCrDjASRt5XiFvsPDvj09a2sWt0unRTeGq7K03i7rLZNY_1VLNuU_VlmEHcPiN5_ATmpWWxSxNDIpiFPVvrCxYs5V6anYUxUBgc0VhLtTkE8s6mS8PqKspK6sikhW1FVB-repOjQa0Zuq_CWaz6XhzslTxen-glOW2qZtt9vNxjmYopihmSGBCE2dQTsMuyXYG8NimaRMFz8lL5UFjU2ZxJyiaZYIDT4-eEO_2-v49NE79q395PXelIPPdmbQsRWcnJzcOZOhT92eT8c-4S-WW2N9g05Vl_3ZSxr9faSBPbAXrIvcIoxsLDERO8CRzfICxODh8pkiNVIwoxTvLMRRnsomZXCN20uZRPMVYAq8nj8ASuj1_SPYsYckxxhMvG7fHy7DXhml76ECZOBT36ejW3jE0fDRchzsI8c0w018uetNleyt4UrHbXu8U250t_ilcYZ4FCrk5WX2BSgVXz4gaSYujX02YvukmJyi4rcu5qqURzGP8I5cqEV4Kf0tz9hidThet_rOVpZWY99O6Ahb2thasdeCX7-u0vzL6IpaHM_eGDXwk_fGcJ_ekLgLUUb6N7rjFnun_lCuQeKEXWaC4QyW2mKt0OvqVoUeTja1hav9bluMy7aY_E9tsdDFszfGAvrJW-PtPq0Rrbldt7TFji9N-W_FY7pvrer-fTE5Jp9dSA52s4j-AOcoGdo">lien</a>.
         
         
 
